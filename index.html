@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Profissional | TI</title>
+    <title>Portfólio | TI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* CSS EMBUTIDO PARA NÃO TER ERRO DE CARREGAMENTO */
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
+            --bg-color: #fff5f7;        /* Fundo Rosa bem clarinho */
+            --card-bg: #ffffff;         /* Cartões brancos para contraste */
+            --text-main: #5c474e;       /* Texto cinza escuro rosado para ler bem */
+            --accent: #ffb6c1;          /* Rosa Bebê (Light Pink) */
+            --accent-dark: #f08080;     /* Rosa mais escuro para detalhes */
         }
 
         body {
@@ -33,20 +32,21 @@
         header {
             text-align: center;
             padding: 60px 20px;
-            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            background: white;
+            border-bottom: 3px solid var(--accent);
         }
 
-        h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--accent); }
-        .subtitle { color: var(--text-dim); font-size: 1.1rem; margin: 0; }
+        h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--accent-dark); }
+        .subtitle { color: var(--text-main); font-size: 1.1rem; opacity: 0.8; }
 
         .about {
             background: var(--card-bg);
             padding: 25px;
-            border-radius: 12px;
-            margin-top: -40px;
-            border: 1px solid #334155;
+            border-radius: 20px;
+            margin-top: -30px;
+            border: 1px solid var(--accent);
             text-align: center;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(255, 182, 193, 0.2);
         }
 
         .grid {
@@ -59,57 +59,50 @@
         .card {
             background: var(--card-bg);
             padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #334155;
+            border-radius: 20px;
+            border: 2px solid transparent;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 10px 15px rgba(255, 182, 193, 0.3);
         }
 
         .icon {
             font-size: 2rem;
-            color: var(--accent);
+            color: var(--accent-dark);
             margin-bottom: 15px;
             display: block;
         }
 
-        h3 { margin: 0 0 15px 0; font-size: 1.25rem; border-bottom: 1px solid #334155; padding-bottom: 10px; }
-
-        ul { list-style: none; padding: 0; margin: 0; }
-        li { margin-bottom: 8px; font-size: 0.95rem; }
+        h3 { margin: 0 0 15px 0; color: var(--accent-dark); border-bottom: 2px solid var(--bg-color); padding-bottom: 10px; }
 
         .tags span {
             display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 4px 12px;
-            border-radius: 6px;
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 50px;
             font-size: 0.85rem;
-            margin-right: 5px;
-            margin-top: 5px;
-            border: 1px solid var(--accent);
+            margin: 5px 5px 0 0;
+            font-weight: bold;
         }
 
         footer {
             text-align: center;
             padding: 50px 0;
-            color: var(--text-dim);
-            font-size: 0.9rem;
+            opacity: 0.7;
         }
 
-        .social-links { margin-top: 20px; }
         .social-links a { 
-            color: var(--text-main); 
+            color: var(--accent-dark); 
             margin: 0 15px; 
             font-size: 1.8rem; 
             text-decoration: none;
-            transition: color 0.3s;
         }
-        .social-links a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -130,10 +123,8 @@
             <div class="card">
                 <i class="fas fa-user-graduate icon"></i>
                 <h3>Formação</h3>
-                <ul>
-                    <li><strong>Graduação:</strong> Redes de Computadores – FATEC Bauru</li>
-                    <li><strong>Técnico:</strong> TI – ETEC Bauru</li>
-                </ul>
+                <p><strong>Graduação:</strong> Redes de Computadores – FATEC Bauru</p>
+                <p><strong>Técnico:</strong> TI – ETEC Bauru</p>
             </div>
 
             <div class="card">
@@ -153,7 +144,7 @@
                 <h3>Sistemas & Infra</h3>
                 <div class="tags">
                     <span>Windows Server</span>
-                    <span>Linux (Debian/Ubuntu)</span>
+                    <span>Linux</span>
                     <span>Redes</span>
                 </div>
             </div>
@@ -163,8 +154,8 @@
     <footer>
         <p>&copy; 2026 • Portfólio Profissional de TI</p>
         <div class="social-links">
-            <a href="URL_DO_SEU_GITHUB" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="URL_DO_SEU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 
