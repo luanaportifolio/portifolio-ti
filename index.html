@@ -3,119 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | TI</title>
+    <title>Portfólio | Luana de Brito</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #FFDEE9;        /* Rosa Bebê no fundo */
-            --card-bg: #2F2F2F;         /* Cinza Grafite nos cartões */
-            --text-main: #FFFFFF;       /* Texto branco para ler no cinza */
-            --accent: #FFB6C1;          /* Rosa Bebê para detalhes */
-            --accent-dark: #f08080;     /* Rosa mais escuro para títulos */
+            --bg-color: #F8F9FA;         /* Fundo levemente cinza para não cansar a vista */
+            --card-bg: #2D2D2D;          /* Cinza Grafite mais profundo */
+            --text-main: #FFFFFF;        
+            --accent: #FFB6C1;           /* Rosa Bebê */
+            --accent-hover: #f08080;     /* Rosa coral para hover */
+            --primary-font: 'Montserrat', sans-serif;
+            --secondary-font: 'Open Sans', sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #333;
+            font-family: var(--secondary-font);
             margin: 0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
+        /* Header com Gradiente */
         header {
             text-align: center;
-            padding: 60px 20px;
-            background: #2F2F2F; /* Header cinza para combinar */
-            border-bottom: 4px solid var(--accent);
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2F2F2F 0%, #1A1A1A 100%);
+            border-bottom: 5px solid var(--accent);
+            color: white;
         }
 
-        h1 { font-size: 2.2rem; margin-bottom: 10px; color: var(--accent); }
-        .subtitle { color: #FFFFFF; font-size: 1.1rem; opacity: 0.9; }
+        header h1 { 
+            font-family: var(--primary-font);
+            font-weight: 800;
+            font-size: 1rem; 
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: var(--accent);
+            opacity: 0.9;
+        }
 
+        .nome-principal { 
+            font-family: var(--primary-font);
+            font-size: 3.5rem; 
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.1;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle { 
+            font-family: var(--secondary-font);
+            font-size: 1.2rem; 
+            margin-top: 15px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        /* Seção Sobre */
         .about {
             background: var(--card-bg);
-            padding: 25px;
-            border-radius: 20px;
-            margin-top: -30px;
-            border: 1px solid var(--accent);
+            color: white;
+            padding: 40px;
+            border-radius: 24px;
+            margin: -40px auto 40px;
+            max-width: 800px;
+            border: 1px solid rgba(255,182,193, 0.3);
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
         }
 
+        .about p { font-size: 1.1rem; margin: 0; }
+        .about strong { color: var(--accent); }
+
+        /* Grid de Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            color: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border: 1px solid var(--accent);
         }
 
         .icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--accent);
-            margin-bottom: 15px;
-            display: block;
+            margin-bottom: 20px;
         }
 
-        h3 { margin: 0 0 15px 0; color: var(--accent); border-bottom: 2px solid #444; padding-bottom: 10px; }
+        h3 { 
+            font-family: var(--primary-font);
+            font-size: 1.4rem;
+            margin: 0 0 15px 0; 
+            color: var(--accent);
+        }
 
+        /* Tags de Habilidades */
+        .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
         .tags span {
-            display: inline-block;
-            background: var(--accent);
-            color: #2F2F2F;
-            padding: 5px 12px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin: 5px 5px 0 0;
-            font-weight: bold;
+            background: rgba(255, 182, 193, 0.15);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--accent);
         }
 
-        /* Estilo específico para o link do WhatsApp */
+        /* Botão WhatsApp */
         .whatsapp-link {
             text-decoration: none;
             color: white;
-            font-weight: bold;
-            display: flex;
+            background: rgba(37, 211, 102, 0.1);
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid #25D366;
+            transition: 0.3s;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
-            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .whatsapp-link:hover {
+            background: #25D366;
+            color: white !important;
         }
         
-        .whatsapp-link i { color: #25D366; font-size: 1.5rem; }
+        .whatsapp-link i { font-size: 1.2rem; }
 
         footer {
             text-align: center;
-            padding: 50px 0;
-            color: #2F2F2F;
-            font-weight: bold;
+            padding: 80px 0 40px;
+            color: #666;
         }
 
+        .social-links { margin-bottom: 20px; }
         .social-links a { 
             color: #2F2F2F; 
             margin: 0 15px; 
             font-size: 1.8rem; 
-            text-decoration: none;
+            transition: 0.3s;
+        }
+        .social-links a:hover { color: var(--accent-hover); }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .nome-principal { font-size: 2.2rem; }
+            header { padding: 50px 20px; }
         }
     </style>
 </head>
@@ -123,15 +189,15 @@
 
     <header>
         <div class="container">
-            <h1>Profissional de Tecnologia da Informação</h1>
-               <h1>Luana de Brito</h1>
-            <p class="subtitle">Graduada em Redes de Computadores - FATEC BAURU • Especialista em Infraestrutura</p>
+            <h1>Profissional de TI</h1>
+            <div class="nome-principal">Luana de Brito</div>
+            <p class="subtitle">Graduada em Redes de Computadores - FATEC BAURU<br><strong>Especialista em Infraestrutura</strong></p>
         </div>
     </header>
 
     <main class="container">
         <section class="about">
-            <p>Atuação focada em <strong>Datacenter</strong>, suporte avançado em ambientes <strong>Linux/Windows</strong>, acesso remoto e gestão de infraestrutura de redes. Experiência técnica consolidada há mais de cinco anos.</p>
+            <p>Atuação focada em <strong>Datacenter</strong>, suporte avançado em ambientes <strong>Linux/Windows</strong> e gestão de infraestrutura de redes. Experiência técnica consolidada há mais de cinco anos.</p>
         </section>
 
         <div class="grid">
@@ -145,13 +211,7 @@
             <div class="card">
                 <i class="fas fa-shield-alt icon"></i>
                 <h3>Segurança</h3>
-                <p>Conformidade com <strong>LGPD</strong> e fundamentos da <strong>ISO 27001</strong>.</p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-database icon"></i>
-                <h3>Disponibilidade</h3>
-                <p>Gestão de Backup, Restore e planos de <strong>Disaster Recovery</strong>.</p>
+                <p>Conformidade com <strong>LGPD</strong> e fundamentos da <strong>ISO 27001</strong> garantindo a integridade dos dados.</p>
             </div>
 
             <div class="card">
@@ -160,33 +220,30 @@
                 <div class="tags">
                     <span>Windows Server</span>
                     <span>Linux</span>
-                    <span>Redes</span>
+                    <span>Virtualização</span>
                     <span>Nuvem</span>
-                    <span>Criação de Sites</span>
+                    <span>Cloud</span>
                 </div>
             </div>
 
             <div class="card">
                 <i class="fas fa-comment-alt icon"></i>
                 <h3>Contato</h3>
+                <p>Disponível para novos projetos em Bauru e região.</p>
                 <a href="https://wa.me/5514996550883" target="_blank" class="whatsapp-link">
-                    <i class="fab fa-whatsapp"></i> (14) 99655-0883 - Bauru -SP
+                    <i class="fab fa-whatsapp"></i> (14) 99655-0883
                 </a>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 • Portfólio Profissional de TI</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
+        <p>&copy; 2026 • Luana de Brito • Bauru-SP</p>
     </footer>
 
 </body>
 </html>
-
-
-
-
