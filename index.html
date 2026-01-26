@@ -33,11 +33,16 @@
             padding: 20px;
         }
 
-        /* HEADER */
+        /* HEADER COM IMAGEM E TRANSPARÊNCIA */
         header {
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #2F2F2F 0%, #1A1A1A 100%);
+            padding: 120px 20px;
+            /* Overlay escuro + Imagem de Datacenter Profissional */
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito Parallax */
             border-bottom: 5px solid var(--accent);
             color: white;
         }
@@ -48,11 +53,11 @@
             font-weight: 800;
             margin: 0;
             line-height: 1;
-            /* Aplicando o gradiente solicitado */
             background: linear-gradient(to right, #ffffff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
+            text-shadow: 0px 10px 20px rgba(0,0,0,0.3);
         }
 
         .cargo-ti { 
@@ -63,13 +68,21 @@
             text-transform: uppercase;
             margin: 15px 0 5px 0;
             color: var(--accent);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .subtitle { 
             font-size: 1.1rem; 
-            margin-top: 10px;
-            opacity: 0.8;
+            margin-top: 15px;
             font-weight: 400;
+            /* Efeito Glassmorphism para o subtítulo */
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
 
         /* SOBRE */
@@ -83,6 +96,8 @@
             border: 1px solid rgba(255,182,193, 0.3);
             text-align: center;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
         }
 
         .about strong { color: var(--accent); }
@@ -177,7 +192,7 @@
         @media (max-width: 600px) {
             .nome-principal { font-size: 2.5rem; }
             .cargo-ti { font-size: 1rem; letter-spacing: 2px; }
-            header { padding: 60px 20px; }
+            header { padding: 80px 20px; }
         }
     </style>
 </head>
