@@ -9,11 +9,10 @@
     
     <style>
         :root {
-            /* ALTERADO: Fundo agora é Rosa Bebê */
-            --bg-color: #FFB6C1; 
+            --bg-color: #FFB6C1; /* Fundo Rosa Bebê */
             --card-bg: #2D2D2D;
             --text-main: #FFFFFF;
-            --accent: #FFB6C1; /* Rosa Bebê */
+            --accent: #FFB6C1; 
             --accent-hover: #f08080;
             --primary-font: 'Montserrat', sans-serif;
             --secondary-font: 'Open Sans', sans-serif;
@@ -21,7 +20,7 @@
 
         body {
             background-color: var(--bg-color);
-            color: #333;
+            color: #2D2D2D; /* Texto geral escuro para ler no rosa */
             font-family: var(--secondary-font);
             margin: 0;
             line-height: 1.6;
@@ -34,16 +33,15 @@
             padding: 20px;
         }
 
-        /* HEADER COM IMAGEM DE SERVIDORES E TRANSPARÊNCIA */
         header {
             text-align: center;
             padding: 120px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
                         url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            border-bottom: 5px solid rgba(255, 255, 255, 0.3); /* Ajustado para não sumir no fundo rosa */
+            border-bottom: 5px solid rgba(255, 255, 255, 0.2);
             color: white;
             position: relative;
         }
@@ -54,16 +52,11 @@
             font-weight: 800;
             margin: 0;
             line-height: 1;
-            background: linear-gradient(to right, #ffffff, var(--accent));
+            background: linear-gradient(to right, #ffffff, #FFD1DC);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
             text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .nome-principal:hover {
-            transform: scale(1.05);
         }
 
         .cargo-ti { 
@@ -73,25 +66,24 @@
             letter-spacing: 5px;
             text-transform: uppercase;
             margin: 15px 0 10px 0;
-            color: var(--accent);
+            color: #FFB6C1; /* Rosa para brilhar no fundo escuro do header */
             text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
 
+        /* RETÂNGULO PEQUENO AJUSTADO */
         .subtitle { 
             font-size: 0.85rem;
             margin-top: 10px;
             font-weight: 400;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             display: inline-block;
             padding: 4px 18px;
             border-radius: 50px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* SOBRE */
         .about {
             background: var(--card-bg);
             color: white;
@@ -108,7 +100,6 @@
 
         .about strong { color: var(--accent); }
 
-        /* GRID E CARDS */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -127,13 +118,12 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
         .card:hover {
             transform: translateY(-10px);
             border-color: white;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
         .icon {
@@ -149,7 +139,6 @@
             font-size: 1.4rem;
         }
 
-        .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
         .tags span {
             background: rgba(255, 182, 193, 0.1);
             color: var(--accent);
@@ -158,50 +147,38 @@
             font-size: 0.8rem;
             border: 1px solid var(--accent);
             font-weight: 600;
+            margin: 4px;
+            display: inline-block;
         }
 
-        /* WHATSAPP */
         .whatsapp-link {
             text-decoration: none;
             color: white;
-            border: 1px solid #25D366;
+            background: #25D366;
             padding: 12px 25px;
             border-radius: 12px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: 0.3s;
-            margin-top: 10px;
             font-weight: 600;
-        }
-
-        .whatsapp-link:hover {
-            background: #25D366;
-            color: white;
         }
 
         footer {
             text-align: center;
             padding: 60px 0;
-            /* Ajustado para cinza escuro para ler melhor no rosa */
-            color: #444; 
+            color: #2D2D2D; /* Texto escuro no fundo rosa */
+            font-weight: 600;
         }
 
-        .social-links { margin-bottom: 20px; }
         .social-links a { 
             color: #2D2D2D; 
             margin: 0 15px; 
             font-size: 1.8rem; 
-            transition: 0.3s;
         }
-        .social-links a:hover { color: white; }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 600px) {
             .nome-principal { font-size: 2.5rem; }
-            .cargo-ti { font-size: 1rem; letter-spacing: 2px; }
             header { padding: 80px 20px; }
-            .about { margin-top: -20px; }
         }
     </style>
 </head>
@@ -222,4 +199,50 @@
 
         <div class="grid">
             <div class="card">
-                <i class
+                <i class="fas fa-user-graduate icon"></i>
+                <h3>Formação</h3>
+                <p>Graduada em Redes de Computadores pela <strong>FATEC Bauru</strong> e Técnica em TI pela <strong>ETEC</strong>.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-server icon"></i>
+                <h3>Infraestrutura</h3>
+                <div class="tags">
+                    <span>Windows Server</span>
+                    <span>Linux</span>
+                    <span>Virtualização</span>
+                    <span>Cloud</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-code icon"></i>
+                <h3>Desenvolvimento Web</h3>
+                <p>Criação de sites modernos e responsivos.</p>
+                <div class="tags">
+                    <span>HTML5 / CSS3</span>
+                    <span>WordPress</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-envelope icon"></i>
+                <h3>Contato</h3>
+                <p>Bauru-SP e projetos remotos.</p>
+                <a href="https://wa.me/5514996550883" target="_blank" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> (14) 99655-0883
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2026 • Luana de Brito • Bauru-SP</p>
+    </footer>
+
+</body>
+</html>
