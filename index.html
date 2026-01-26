@@ -9,11 +9,11 @@
     
     <style>
         :root {
-            --bg-color: #F8F9FA;         /* Fundo levemente cinza para não cansar a vista */
-            --card-bg: #2D2D2D;          /* Cinza Grafite mais profundo */
-            --text-main: #FFFFFF;        
-            --accent: #FFB6C1;           /* Rosa Bebê */
-            --accent-hover: #f08080;     /* Rosa coral para hover */
+            --bg-color: #F8F9FA;
+            --card-bg: #2D2D2D;
+            --text-main: #FFFFFF;
+            --accent: #FFB6C1; /* Rosa Bebê */
+            --accent-hover: #f08080;
             --primary-font: 'Montserrat', sans-serif;
             --secondary-font: 'Open Sans', sans-serif;
         }
@@ -24,16 +24,14 @@
             font-family: var(--secondary-font);
             margin: 0;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Header com Gradiente */
         header {
             text-align: center;
             padding: 80px 20px;
@@ -50,7 +48,6 @@
             text-transform: uppercase;
             margin-bottom: 5px;
             color: var(--accent);
-            opacity: 0.9;
         }
 
         .nome-principal { 
@@ -58,43 +55,33 @@
             font-size: 3.5rem; 
             font-weight: 800;
             margin: 0;
-            line-height: 1.1;
             background: linear-gradient(to right, #fff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .subtitle { 
-            font-family: var(--secondary-font);
             font-size: 1.2rem; 
             margin-top: 15px;
             opacity: 0.8;
-            font-weight: 400;
         }
 
-        /* Seção Sobre */
         .about {
             background: var(--card-bg);
             color: white;
-            padding: 40px;
+            padding: 35px;
             border-radius: 24px;
             margin: -40px auto 40px;
-            max-width: 800px;
+            max-width: 850px;
             border: 1px solid rgba(255,182,193, 0.3);
             text-align: center;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            position: relative;
         }
 
-        .about p { font-size: 1.1rem; margin: 0; }
-        .about strong { color: var(--accent); }
-
-        /* Grid de Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-top: 50px;
         }
 
         .card {
@@ -102,8 +89,8 @@
             padding: 30px;
             border-radius: 20px;
             color: white;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -112,8 +99,8 @@
 
         .card:hover {
             transform: translateY(-10px);
+            border-color: var(--accent);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-            border: 1px solid var(--accent);
         }
 
         .icon {
@@ -124,65 +111,51 @@
 
         h3 { 
             font-family: var(--primary-font);
-            font-size: 1.4rem;
-            margin: 0 0 15px 0; 
             color: var(--accent);
+            margin-bottom: 15px;
         }
 
-        /* Tags de Habilidades */
         .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
         .tags span {
-            background: rgba(255, 182, 193, 0.15);
+            background: rgba(255, 182, 193, 0.1);
             color: var(--accent);
-            padding: 6px 14px;
-            border-radius: 8px;
+            padding: 5px 12px;
+            border-radius: 6px;
             font-size: 0.8rem;
-            font-weight: 600;
             border: 1px solid var(--accent);
+            font-weight: 600;
         }
 
-        /* Botão WhatsApp */
         .whatsapp-link {
             text-decoration: none;
             color: white;
-            background: rgba(37, 211, 102, 0.1);
-            padding: 12px 20px;
-            border-radius: 12px;
             border: 1px solid #25D366;
-            transition: 0.3s;
+            padding: 10px 20px;
+            border-radius: 12px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            margin-top: 10px;
+            transition: 0.3s;
         }
 
         .whatsapp-link:hover {
             background: #25D366;
-            color: white !important;
+            color: #fff;
         }
-        
-        .whatsapp-link i { font-size: 1.2rem; }
 
         footer {
             text-align: center;
-            padding: 80px 0 40px;
+            padding: 60px 0;
             color: #666;
         }
 
-        .social-links { margin-bottom: 20px; }
         .social-links a { 
-            color: #2F2F2F; 
-            margin: 0 15px; 
-            font-size: 1.8rem; 
+            color: #2D2D2D; 
+            margin: 0 10px; 
+            font-size: 1.5rem; 
             transition: 0.3s;
         }
-        .social-links a:hover { color: var(--accent-hover); }
-
-        /* Responsividade */
-        @media (max-width: 600px) {
-            .nome-principal { font-size: 2.2rem; }
-            header { padding: 50px 20px; }
-        }
+        .social-links a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
@@ -191,45 +164,56 @@
         <div class="container">
             <h1>Profissional de TI</h1>
             <div class="nome-principal">Luana de Brito</div>
-            <p class="subtitle">Graduada em Redes de Computadores - FATEC BAURU<br><strong>Especialista em Infraestrutura</strong></p>
+            <p class="subtitle">FATEC Bauru • Especialista em Infraestrutura & Redes</p>
         </div>
     </header>
 
     <main class="container">
         <section class="about">
-            <p>Atuação focada em <strong>Datacenter</strong>, suporte avançado em ambientes <strong>Linux/Windows</strong> e gestão de infraestrutura de redes. Experiência técnica consolidada há mais de cinco anos.</p>
+            <p>Especialista com mais de 5 anos de experiência em <strong>Datacenters</strong>, ambientes críticos <strong>Linux/Windows</strong> e segurança da informação.</p>
         </section>
 
         <div class="grid">
             <div class="card">
                 <i class="fas fa-user-graduate icon"></i>
                 <h3>Formação</h3>
-                <p><strong>Graduação:</strong> Redes de Computadores – FATEC Bauru</p>
-                <p><strong>Técnico:</strong> TI – ETEC Bauru</p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-shield-alt icon"></i>
-                <h3>Segurança</h3>
-                <p>Conformidade com <strong>LGPD</strong> e fundamentos da <strong>ISO 27001</strong> garantindo a integridade dos dados.</p>
+                <p>Graduada em Redes de Computadores pela <strong>FATEC Bauru</strong> e Técnica em TI pela <strong>ETEC</strong>.</p>
             </div>
 
             <div class="card">
                 <i class="fas fa-server icon"></i>
-                <h3>Sistemas & Infra</h3>
+                <h3>Infraestrutura</h3>
                 <div class="tags">
                     <span>Windows Server</span>
                     <span>Linux</span>
                     <span>Virtualização</span>
-                    <span>Criação de Sites</span>
+                    <span>AD/DNS/DHCP</span>
                     <span>Cloud</span>
                 </div>
             </div>
 
             <div class="card">
-                <i class="fas fa-comment-alt icon"></i>
+                <i class="fas fa-code icon"></i>
+                <h3>Desenvolvimento Web</h3>
+                <p>Criação de sites modernos e responsivos, unindo design à performance de hospedagem.</p>
+                <div class="tags">
+                    <span>HTML5/CSS3</span>
+                    <span>WordPress</span>
+                    <span>Hospedagem</span>
+                    <span>Otimização</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-shield-alt icon"></i>
+                <h3>Segurança & Dados</h3>
+                <p>Gestão de Backup/Restore, Disaster Recovery e conformidade com a <strong>LGPD</strong>.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-envelope icon"></i>
                 <h3>Contato</h3>
-                <p>Disponível para novos projetos em Bauru e região.</p>
+                <p>Bauru - SP e Remoto</p>
                 <a href="https://wa.me/5514996550883" target="_blank" class="whatsapp-link">
                     <i class="fab fa-whatsapp"></i> (14) 99655-0883
                 </a>
@@ -242,9 +226,8 @@
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p>&copy; 2026 • Luana de Brito • Bauru-SP</p>
+        <p>&copy; 2026 • Portfólio Luana de Brito</p>
     </footer>
 
 </body>
 </html>
-
