@@ -24,6 +24,7 @@
             font-family: var(--secondary-font);
             margin: 0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -32,40 +33,55 @@
             padding: 20px;
         }
 
+        /* HEADER */
         header {
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px 80px;
             background: linear-gradient(135deg, #2F2F2F 0%, #1A1A1A 100%);
             border-bottom: 5px solid var(--accent);
             color: white;
         }
 
-        header h1 { 
+        /* EFEITO RESPONSIVO NO NOME */
+        .nome-principal { 
             font-family: var(--primary-font);
+            font-size: 3.8rem; 
             font-weight: 800;
-            font-size: 1rem; 
-            letter-spacing: 3px;
+            margin: 0;
+            line-height: 1;
+            display: inline-block;
+            background: linear-gradient(to right, #fff, var(--accent), #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .nome-principal:hover {
+            transform: scale(1.1);
+            background-position: right center;
+            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.6));
+        }
+
+        .cargo-ti { 
+            font-family: var(--primary-font);
+            font-weight: 600;
+            font-size: 1.2rem; 
+            letter-spacing: 5px;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin: 20px 0 10px 0;
             color: var(--accent);
         }
 
-        .nome-principal { 
-            font-family: var(--primary-font);
-            font-size: 3.5rem; 
-            font-weight: 800;
-            margin: 0;
-            background: linear-gradient(to right, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         .subtitle { 
-            font-size: 1.2rem; 
-            margin-top: 15px;
+            font-size: 1.1rem; 
+            margin-top: 10px;
             opacity: 0.8;
+            font-weight: 400;
         }
 
+        /* SOBRE */
         .about {
             background: var(--card-bg);
             color: white;
@@ -78,10 +94,14 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
+        .about strong { color: var(--accent); }
+
+        /* GRID E CARDS */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+            margin-bottom: 50px;
         }
 
         .card {
@@ -113,65 +133,79 @@
             font-family: var(--primary-font);
             color: var(--accent);
             margin-bottom: 15px;
+            font-size: 1.4rem;
         }
 
+        /* TAGS */
         .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
         .tags span {
             background: rgba(255, 182, 193, 0.1);
             color: var(--accent);
-            padding: 5px 12px;
-            border-radius: 6px;
+            padding: 6px 14px;
+            border-radius: 8px;
             font-size: 0.8rem;
             border: 1px solid var(--accent);
             font-weight: 600;
         }
 
+        /* WHATSAPP */
         .whatsapp-link {
             text-decoration: none;
             color: white;
             border: 1px solid #25D366;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 12px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             transition: 0.3s;
+            margin-top: 10px;
+            font-weight: 600;
         }
 
         .whatsapp-link:hover {
             background: #25D366;
-            color: #fff;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
 
         footer {
             text-align: center;
-            padding: 60px 0;
+            padding: 80px 0 40px;
             color: #666;
+            background: #f1f1f1;
         }
 
+        .social-links { margin-bottom: 20px; }
         .social-links a { 
             color: #2D2D2D; 
-            margin: 0 10px; 
-            font-size: 1.5rem; 
+            margin: 0 15px; 
+            font-size: 1.8rem; 
             transition: 0.3s;
         }
-        .social-links a:hover { color: var(--accent); }
+        .social-links a:hover { color: var(--accent-hover); }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 600px) {
+            .nome-principal { font-size: 2.5rem; }
+            .cargo-ti { font-size: 1rem; letter-spacing: 2px; }
+            header { padding: 60px 20px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-           
             <div class="nome-principal">Luana de Brito</div>
-             <h1>Profissional de TI</h1>
+            <h1 class="cargo-ti">Profissional de TI</h1>
             <p class="subtitle">FATEC Bauru • Especialista em Infraestrutura & Redes</p>
         </div>
     </header>
 
     <main class="container">
         <section class="about">
-            <p>Especialista com mais de 5 anos de experiência em <strong>Datacenters</strong>, ambientes críticos <strong>Linux/Windows</strong> e segurança da informação.</p>
+            <p>Especialista com mais de <strong>5 anos de experiência</strong> em Datacenters, suporte avançado a ambientes críticos <strong>Linux/Windows</strong> e segurança da informação.</p>
         </section>
 
         <div class="grid">
@@ -196,9 +230,9 @@
             <div class="card">
                 <i class="fas fa-code icon"></i>
                 <h3>Desenvolvimento Web</h3>
-                <p>Criação de sites modernos e responsivos, unindo design à performance de hospedagem.</p>
+                <p>Criação de sites modernos e responsivos, integrando design e performance técnica.</p>
                 <div class="tags">
-                    <span>HTML5/CSS3</span>
+                    <span>HTML5 / CSS3</span>
                     <span>WordPress</span>
                     <span>Hospedagem</span>
                     <span>Otimização</span>
@@ -208,13 +242,13 @@
             <div class="card">
                 <i class="fas fa-shield-alt icon"></i>
                 <h3>Segurança & Dados</h3>
-                <p>Gestão de Backup/Restore, Disaster Recovery e conformidade com a <strong>LGPD</strong>.</p>
+                <p>Gestão de Backup/Restore, Disaster Recovery e aplicação de diretrizes da <strong>LGPD</strong>.</p>
             </div>
 
             <div class="card">
                 <i class="fas fa-envelope icon"></i>
                 <h3>Contato</h3>
-                <p>Bauru - SP e Remoto</p>
+                <p>Disponível para Bauru-SP e projetos remotos.</p>
                 <a href="https://wa.me/5514996550883" target="_blank" class="whatsapp-link">
                     <i class="fab fa-whatsapp"></i> (14) 99655-0883
                 </a>
@@ -224,12 +258,11 @@
 
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p>&copy; 2026 • Portfólio Luana de Brito</p>
+        <p>&copy; 2026 • Luana de Brito • Orgulhosamente de Bauru-SP</p>
     </footer>
 
 </body>
 </html>
-
